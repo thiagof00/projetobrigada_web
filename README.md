@@ -1,0 +1,1 @@
+Projeto web em react para ser utilizado internamente para consumir a api de backend do repositorio https://github.com/thiagof00/projetobrigada_backend
