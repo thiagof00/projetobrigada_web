@@ -26,21 +26,23 @@ function Register() {
     <input type="text" {...register("nome", {required: true})} name="nome" />
     {errors.nome && <span>O campo é obrigatório</span>}
 
-    <label htmlFor="endereco">Endereço</label>
-    <input type="text" {...register("endereco")} name="endereco"/>
-    {errors.endereco && <span>O campo é obrigatório</span>}
-
-    <label htmlFor="email">Email</label>
-    <input type="text" {...register("email")} name="email"/>
-    {errors.email && <span>O campo é obrigatório</span>}
-
     <label htmlFor="cpf">CPF</label>
     <input type="text" {...register("cpf")} name="cpf"/>
     {errors.cpf && <span>O campo é obrigatório</span>}
+    
+    
+    <label htmlFor="email">Email</label>
+    <input type="email" {...register("email")} name="email"/>
+    {errors.email && <span>O campo é obrigatório</span>}
 
     <label htmlFor="telefone">Telefone</label>
     <input type="text" {...register("telefone")} name="telefone"/>
     {errors.endereco && <span>O campo é obrigatório</span>}
+    
+    <label htmlFor="endereco">Endereço</label>
+    <input type="text" {...register("endereco")} name="endereco"/>
+    {errors.endereco && <span>O campo é obrigatório</span>}
+    
 
     <label htmlFor="perfil">Perfil</label>
     <select name="perfil" id="perfil" {...register("perfil" , {required: true, value:"CIVIL"})}>
@@ -49,10 +51,6 @@ function Register() {
       <option value="INTERNO">Interno</option>
     </select>
 
-
-
-
-    
     <input type="submit" />
 
 
