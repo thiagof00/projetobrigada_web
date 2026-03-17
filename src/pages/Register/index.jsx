@@ -1,6 +1,11 @@
+import {useState} from "react"
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
+import connectApi from "../../api/api"
 function Register() {
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const {
     register,
@@ -9,9 +14,31 @@ function Register() {
     formState: {errors}
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) => {
+    const {nome, cpf, email, endereco, telefone, perfil} = data
+    console.log({nome, cpf, email, endereco, telefone, perfil})
+    setLoading(true)
+    try{
+        const response = await connectApi.post("/usuarios", {
+          nome, cpf, email, endereco, telefone, perfil
+        }).then(responseSuccess=>{
+          window.alert("Cadastrado!")
+          console.log({"resposta:":responseSuccess})
+          setLoading(false)
+        }).catch(error=>{
+          window.alert("Erro no cadastro, tente novamente")
+          console.log(error)
+          setLoading(false)
+        })
+    }catch(err){
+      setLoading(false)
+        setError(err)
+    }
+  }
 
 
+  if (loading) return <p>Carregando...</p>;
+  if (error) return <p>Erro: {JSON.stringify(error)}, <Link to="/home">Voltar</Link></p>;
 
   return (
     <>
