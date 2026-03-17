@@ -3,8 +3,11 @@ import { Link } from "react-router-dom"
 import connectApi from "../../api/api";
 function Home() {
   const [data, setData] = useState([]);
+  const [selectedType, setSelectedType] = useState("CIVIL")
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const tipos = ["CIVIL", "INTERNO", "BRIGADA"]
 
   useEffect(()=>{
     
@@ -24,6 +27,10 @@ function Home() {
   
   },[])
 
+  const usuariosFiltrados = selectedType === "CIVIL"
+    ? data.filter(usuario=> usuario.perfil === selectedType)
+    : data.filter(usuario => usuario.perfil === selectedType);
+
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>Erro: {error}</p>;
 
@@ -41,11 +48,20 @@ function Home() {
       <Link to="/cadastrar">Cadastrar</Link>
       
       <div className="listagem">
-        <div className="selecao"> 
-          <button>Civís</button>
-          <button>Brigadistas</button>
-          <button>Internos</button>
-        </div>
+        <div>
+        {tipos.map((type) => (
+          <button
+            key={type}
+            onClick={() => setSelectedType(type)}
+            style={{
+              fontWeight: selectedType === type ? "bold" : "normal",
+              borderBottom: selectedType === type ? "2px solid blue" : "none",
+            }}
+          >
+            {type}
+          </button>
+        ))}
+      </div>
         
         <table>
           <thead>
@@ -58,8 +74,8 @@ function Home() {
           </thead>
 
           <tbody>
-          {data.map((line) => (
-          <tr key={line.id}>
+          {usuariosFiltrados.map((line) => (
+            <tr key={line.id}>
             <td>{line.nome}</td>
             <td>{line.cpf}</td>
             <td>{line.endereco}</td>
