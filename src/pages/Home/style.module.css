@@ -1,0 +1,106 @@
+.loadingAndError {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.loadingAndError p {
+  color: var(--verde-musgo);
+}
+
+/* ── Página ── */
+.mainHome {
+  padding: 24px 32px;
+  width: 80vw;
+}
+
+/* ── Abas ── */
+.tabs {
+  width: 100%;
+  display: flex;
+  padding: 0 8px;
+  justify-content: center;
+}
+
+.tab {
+    width: 100%;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #aaa;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s;
+}
+
+.tab:hover {
+  color: var(--verde-claro);
+}
+
+.tab.activeTab {
+  color: var(--verde-medio);
+}
+
+.tab.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--verde-medio);
+}
+
+/* ── Container da tabela ── */
+.tableWrapper {
+    width: 100%;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Tabela ── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table thead tr {
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.table th {
+  padding: 14px 20px;
+  text-align: left;
+  font-weight: 600;
+  color: #222;
+  font-size: 13px;
+  text-align: center;
+}
+
+.table td {
+  padding: 14px 20px;
+  color: #444;
+  text-align: center;
+  font-size: 13px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background-color: #f9f9f9;
+}

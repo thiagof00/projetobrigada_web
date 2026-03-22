@@ -1,13 +1,13 @@
 import {Link} from 'react-router-dom'
-import "./index.css"
+import styles from "./style.module.css"
 function LogIn() {
 
   return (
     <>
-    <h1>Sistema de cadastro</h1>
+    <main>
+    <h1 className={styles.titleLogin}>Sistema de cadastro</h1>
 
-    <div className="box-login">
-      <div className="inputs-login">
+    <div className={styles.boxLogin}>
         
         <label htmlFor="usuario">Usuario</label>
         <input type="text" name="usuario" id="usuario" />
@@ -15,9 +15,9 @@ function LogIn() {
         <label htmlFor="senha">Senha</label>
         <input type="password" name="senha" id="senha" />
 
-      </div>
-      <button type="button"><Link to="/home">Entrar</Link></button>
+      <button type="button"><Link to="/home" style={{ color: 'white', textDecoration: 'none', fontWeight:"bold", fontSize: "1.1rem"}}>Entrar</Link></button>
     </div>
+    </main>
     </>
   )
 }
