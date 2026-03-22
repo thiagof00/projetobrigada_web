@@ -1,0 +1,66 @@
+main{
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    padding-top: 4rem;
+}
+.titleLogin{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--verde-escuro);
+}
+.boxLogin{
+    background-color: #FFF;
+
+    margin-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+    
+    width: 20rem;
+    height: 15rem;
+
+
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: left;
+    border-radius: 0.4rem;
+}
+.boxLogin input{
+    background-color: var(--cinza-muito-claro);
+    height: 2.2rem;
+    border-radius: 0.5rem;
+
+    padding: 0.4rem;
+
+    color: var(--verde-musgo);
+    font-size: 1rem;
+}
+.boxLogin input:focus{
+    border: 0.5px solid var(--verde-escuro);
+    outline: none;
+}
+
+.boxLogin label{
+    color: var(--cinza-claro);
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+
+}
+.boxLogin button{
+
+    margin-top: 2rem;
+    background-color: var(--verde-medio);
+    color: #FFF;
+    border-radius: 0.3rem;
+
+
+    height: 2.5rem;
+
+}

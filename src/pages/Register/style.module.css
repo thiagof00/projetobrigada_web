@@ -1,0 +1,135 @@
+.loadingAndError {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+.loadingAndError p {
+  color: var(--verde-musgo);
+}
+
+.page {
+  background-color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+
+  width: 40rem;
+
+}
+
+/* ── Card ── */
+.card {
+  width: 100%;
+}
+
+/* ── Campos ── */
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+  text-align: left;
+  padding-left: 0.5rem;
+  color: var(--verde-claro);
+}
+
+.field input {
+  height: 38px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #333;
+  background: #fafafa;
+  outline: none;
+  transition: border 0.15s;
+}
+
+.field input:focus {
+  border-color: #4a7c5e;
+  background: #fff;
+}
+
+/* ── Linha com dois campos ── */
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.row .field {
+  flex: 1;
+}
+
+/* ── Select de Perfil ── */
+.perfilWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.perfilWrapper label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+  color: var(--verde-claro);
+}
+
+.perfilSelect {
+  height: 38px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 16px;
+  font-size: 14px;
+  color: var(--verde-musgo);
+  background: #fafafa;
+  outline: none;
+  cursor: pointer;
+  transition: border 0.15s;
+  min-width: 140px;
+}
+
+.perfilSelect:focus {
+  border-color: #4a7c5e;
+}
+
+/* ── Erro ── */
+.errorMsg {
+  font-size: 11px;
+  color: #e53935;
+  margin-top: 4px;
+}
+
+/* ── Botão salvar ── */
+.submitBtn {
+  width: 100%;
+  height: 44px;
+  background-color: #4a7c5e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.submitBtn:hover {
+  background-color: #3a6b4e;
+}
+
+.submitBtn:disabled {
+  background-color: #a5c4b0;
+  cursor: not-allowed;
+}

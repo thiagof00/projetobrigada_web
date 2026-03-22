@@ -1,3 +1,13 @@
+:root {
+  --verde-escuro: #344E41;
+  --verde-musgo: #3A5A40;
+  --verde-medio: #588157;
+  --verde-claro: #A3B18A;
+  --cinza-claro: #DAD7CD;
+  --cinza-muito-claro: #F4F4F4;
+  --background:#EDEDED;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -7,5 +17,13 @@
 }
 
 body{
-  background-color: var(--cinza-muito-claro);
+  background-color: var(--background);
+
+  width: 100vw;
+  height: 100vh;
+
+  font-size: 1rem;
+}
+h1,h2,h3,h4, body, button, span, label{
+  font-family: "Roboto", sans-serif;
 }
